@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      docker-compose build
+      docker-compose up -d
+    command: |
+      docker-compose exec curling-score-tracker bash
+
+ports:
+  - port: 8888
+    onOpen: open-preview
